@@ -50,4 +50,6 @@ def predict():
 
 # ✅ Proper settings for Render (no ngrok, no debug)
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    os.makedirs('uploads', exist_ok=True)
+    port = int(os.environ.get('PORT', 5000))  # use Render's dynamic port
+    app.run(host='0.0.0.0', port=port)
