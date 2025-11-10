@@ -50,6 +50,11 @@ def predict():
 
 # ✅ Proper settings for Render (no ngrok, no debug)
 if __name__ == '__main__':
+    # ✅ Create uploads folder automatically
     os.makedirs('uploads', exist_ok=True)
-    port = int(os.environ.get('PORT', 5000))  # use Render's dynamic port
+    
+    # ✅ Use Render's dynamic port
+    port = int(os.environ.get('PORT', 5000))
+    
+    # ✅ Run the app on Render's public interface
     app.run(host='0.0.0.0', port=port)
